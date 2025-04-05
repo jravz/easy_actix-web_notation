@@ -11,17 +11,17 @@ macro_rules! route {
     };
     (put $path:expr => $handler:path) => {
         move |cfg: &mut web::ServiceConfig| {
-            cfg.service(web::resource($path).route(web::post().to($handler)));
+            cfg.service(web::resource($path).route(web::put().to($handler)));
         }
     };
     (patch $path:expr => $handler:path) => {
         move |cfg: &mut web::ServiceConfig| {
-            cfg.service(web::resource($path).route(web::post().to($handler)));
+            cfg.service(web::resource($path).route(web::patch().to($handler)));
         }
     };
     (delete $path:expr => $handler:path) => {
         move |cfg: &mut web::ServiceConfig| {
-            cfg.service(web::resource($path).route(web::post().to($handler)));
+            cfg.service(web::resource($path).route(web::delete().to($handler)));
         }
     };
 }
