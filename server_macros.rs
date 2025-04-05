@@ -9,6 +9,21 @@ macro_rules! route {
             cfg.service(web::resource($path).route(web::post().to($handler)));
         }
     };
+    (put $path:expr => $handler:path) => {
+        move |cfg: &mut web::ServiceConfig| {
+            cfg.service(web::resource($path).route(web::post().to($handler)));
+        }
+    };
+    (patch $path:expr => $handler:path) => {
+        move |cfg: &mut web::ServiceConfig| {
+            cfg.service(web::resource($path).route(web::post().to($handler)));
+        }
+    };
+    (delete $path:expr => $handler:path) => {
+        move |cfg: &mut web::ServiceConfig| {
+            cfg.service(web::resource($path).route(web::post().to($handler)));
+        }
+    };
 }
 
 
