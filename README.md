@@ -1,5 +1,5 @@
 # easy_actix-web_notation
-Write easily readable routes for actix-web
+Write easily readable routes for actix-web within Rust.
 
 Imagine presenting starting your server and presenting your routes in an easy readable fashion.
 Be able to scope and group your routes.
